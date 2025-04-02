@@ -20,7 +20,15 @@ public class Banno : Humano
     }
     public override void Execute()
     {
-
+        if (_DataAgent.WC.value > 0.15f)
+        {
+            _StateMachine.ChangeState(TypeState.Banno);
+            return;
+        }
+        else
+        {
+            _DataAgent.DiscountWC();
+        }
 
         base.Execute();
     }
