@@ -41,7 +41,9 @@ public class IAEye : MonoBehaviour
         {
             movementController.agent.SetDestination(ViewToy.transform.position);
             Debug.Log("Toy: seguir waza" );
+
         }
+        // x ahora
     }
 
     void Scan()
@@ -67,10 +69,13 @@ public class IAEye : MonoBehaviour
                     min_dist = dist;
                 }
             }
+            
         }
 
         if (ViewToy == null)
             dataView.InSight = false;
+        
+
     }
 
     private void OnValidate()
