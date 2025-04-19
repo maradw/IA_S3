@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class StateBase : MonoBehaviour
 {
     protected MachineState _MachineState;
     public StateType stateType;
     public StateNode stateNode;
-    
+    protected NavMeshAgent agent;
 
     public virtual void LoadComponent()
     {
@@ -16,7 +17,8 @@ public class StateBase : MonoBehaviour
     }
     public virtual void Enter()
     {
-
+        if (agent == null)
+            agent = GetComponent<NavMeshAgent>();
     }
     public virtual void Execute()
     {
